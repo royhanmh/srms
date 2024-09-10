@@ -8,13 +8,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('admin/dashboard', function () {
     return view('admin.index');
 })
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::get('admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
+Route::controller(AdminController::class)->group(function () {
+    Route::get('admin/logout', 'AdminLogout')->name('admin.logout');
+    Route::get('admin/profile', 'AdminProfile')->name('admin.profile');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
