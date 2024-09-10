@@ -42,9 +42,14 @@
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" required="" placeholder="Username"
-                                        name="name">
-
+                                    <input
+                                        class="form-control @error('name') is-invalid
+                                        
+                                    @enderror"
+                                        type="text" required="" placeholder="Username" name="name">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
 
