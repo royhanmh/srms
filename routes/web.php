@@ -12,11 +12,12 @@ Route::get('admin/dashboard', function () {
     return view('admin.index');
 })
     ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+    ->name('admin.dashboard');
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('admin/logout', 'AdminLogout')->name('admin.logout');
     Route::get('admin/profile', 'AdminProfile')->name('admin.profile');
+    Route::post('admin/profile', 'AdminProfileUpdate')->name('admin.profile.update');
 });
 
 Route::middleware('auth')->group(function () {

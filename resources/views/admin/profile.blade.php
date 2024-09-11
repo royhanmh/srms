@@ -26,39 +26,42 @@
 
                         <h4 class="card-title">Admin Profile - Update</h4>
 
-
-                        <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="name" value="{{ $data->name }}">
-                            </div>
-                        </div>
-                        <!-- end row -->
-                        <div class="row mb-3">
-                            <label for="example-search-input" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="email" name="email" value="{{ $data->email }}">
-                            </div>
-                        </div>
-                        <!-- end row -->
-                        <div class="row mb-3">
-                            <label for="example-email-input" class="col-sm-2 col-form-label">Image</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <input type="file" class="form-control" id="Image">
+                        <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="name" value="{{ $data->name }}">
                                 </div>
                             </div>
-                        </div>
-                        <!-- end row -->
-                        <div class="row mb-3">
-                            <label for="example-email-input" class="col-sm-2 col-form-label">Image</label>
-                            <div class="col-sm-10">
-                                <img id="ShowImage" src="{{ asset('admin/assets/images/users/avatar-4.jpg') }}"
-                                    alt="avatar-4" class="rounded avatar-md">
+                            <!-- end row -->
+                            <div class="row mb-3">
+                                <label for="example-search-input" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="email" name="email" value="{{ $data->email }}">
+                                </div>
                             </div>
-                        </div>
-                        <!-- end row -->
-                        <button type="button" class="btn btn-primary waves-effect waves-light">Update Profile</button>
+                            <!-- end row -->
+                            <div class="row mb-3">
+                                <label for="example-email-input" class="col-sm-2 col-form-label">Image</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <input type="file" class="form-control" name="image" id="Image">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                            <div class="row mb-3">
+                                <label for="example-email-input" class="col-sm-2 col-form-label">Image</label>
+                                <div class="col-sm-10">
+                                    <img id="ShowImage"
+                                        src="{{ empty($data->image) ? asset('uploads/no_image.png') : asset('uploads/admin_profiles/' . $data->image) }}"
+                                        alt="avatar-4" class="rounded avatar-md">
+                                </div>
+                            </div>
+                            <!-- end row -->
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
+                        </form>
                     </div>
                 </div>
             </div> <!-- end col -->
