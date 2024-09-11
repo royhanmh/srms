@@ -18,6 +18,8 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('admin/logout', 'AdminLogout')->name('admin.logout');
     Route::get('admin/profile', 'AdminProfile')->name('admin.profile');
     Route::post('admin/profile', 'AdminProfileUpdate')->name('admin.profile.update');
+    Route::get('admin/password_change', 'AdminPasswordChange')->name('admin.password.change');
+    Route::post('admin/password_change', 'AdminPasswordUpdate')->name('admin.password.update');
 });
 
 Route::middleware('auth')->group(function () {
