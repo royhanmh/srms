@@ -28,7 +28,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.dashboard', absolute: false));
+        $notification = [
+            'message' => 'Admin Logged In Succesfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->intended(route('admin.dashboard', absolute: false))->with($notification);
     }
 
     /**
@@ -42,6 +46,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        $notification = [
+            'message' => 'Admin Logged Out Succesfully',
+            'alert-type' => 'success',
+        ];
+        return redirect('/')->with($notification);
     }
 }
