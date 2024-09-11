@@ -1,17 +1,20 @@
 <div class="vertical-menu">
 
     <div data-simplebar class="h-100">
+        @php
 
+            $data = App\Models\User::findOrFail(Auth::user()->id);
+        @endphp
         <!-- User details -->
         <div class="user-profile text-center mt-3">
             <div class="">
-                <img src="{{ asset('admin/assets/images/users/avatar-1.jpg') }}" alt=""
+                <img src="{{ empty($data->image) ? asset('uploads/no_image.png') : asset('uploads/admin_profiles/' . $data->image) }}"alt=""
                     class="avatar-md rounded-circle">
             </div>
             <div class="mt-3">
-                <h4 class="font-size-16 mb-1">Julia Hudda</h4>
-                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i>
-                    Online</span>
+                <h4 class="font-size-16 mb-1">{{ $data->name }}</h4>
+                <span class="text-muted"><i class=" align-middle font-size-14 text-success"></i>
+                    {{ $data->email }}</span>
             </div>
         </div>
 
