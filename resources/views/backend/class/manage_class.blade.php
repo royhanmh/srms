@@ -48,7 +48,7 @@
                             <td class="text-center"><a href="{{ route('edit.class', $class->id) }}"
                                     class="fas fa-edit btn btn-info btn-sm py-2"></a>
 
-                                <a href="{{ route('delete.class', $class->id) }}"
+                                <a href="{{ route('delete.class', $class->id) }}" id="delete"
                                     class="fas fa-trash-alt btn btn-danger btn-sm py-2"></a>
                             </td>
                         </tr>
