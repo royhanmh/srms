@@ -30,4 +30,9 @@ class ClassesController extends Controller
         ];
         return redirect()->back()->with($notification);
     }
+    public function ManageClass()
+    {
+        $classes = classes::all();
+        return view('backend.class.manage_class', compact('classes'));
+    }
 }

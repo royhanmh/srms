@@ -156,7 +156,8 @@
     <script src="{{ asset('admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
     <script src="{{ asset('admin/assets/js/pages/dashboard.init.js') }}"></script>
-
+    <!-- Datatable init js -->
+    <script src="{{ asset('admin/assets/js/pages/datatables.init.js') }}"></script>
     <!-- App js -->
     <script src="{{ asset('admin/assets/js/app.js') }}"></script>
 
