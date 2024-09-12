@@ -24,9 +24,12 @@ Route::controller(AdminController::class)->group(function () {
 });
 //Classe All Routes
 Route::controller(ClassesController::class)->group(function () {
-    Route::get('admin/create_class', 'CreateClass')->name('create.class');
-    Route::post('store/create_class', 'StoreClass')->name('store.class');
-    Route::get('admin/manage_class', 'ManageClass')->name('manage.class');
+    Route::get('admin/class/create', 'CreateClass')->name('create.class');
+    Route::post('admin/class/store', 'StoreClass')->name('store.class');
+    Route::get('admin/class/manage', 'ManageClass')->name('manage.class');
+    Route::get('admin/class/edit/{id}', 'EditClass')->name('edit.class');
+    Route::post('admin/class/update', 'UpdateClass')->name('update.class');
+    Route::get('admin/delete/{id}', 'DeleteClass')->name('delete.class');
 });
 
 Route::middleware('auth')->group(function () {

@@ -20,11 +20,8 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Default Datatable</h4>
-            <p class="card-title-desc">DataTables has most features enabled by
-                default, so all you need to do to use it with your own tables is to call
-                the construction function: <code>$().DataTable();</code>.
-            </p>
+            <h4 class="card-title">Classes Data</h4>
+
 
             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -48,9 +45,11 @@
                             <td>{{ $class->class_name }}</td>
                             <td>{{ $class->section }}</td>
                             <td>{{ $class->created_at }}</td>
-                            <td class="text-center"><a href="" class="fas fa-edit btn btn-info btn-sm py-2"></a>
+                            <td class="text-center"><a href="{{ route('edit.class', $class->id) }}"
+                                    class="fas fa-edit btn btn-info btn-sm py-2"></a>
 
-                                <a href="" class="fas fa-trash-alt btn btn-danger btn-sm py-2"></a>
+                                <a href="{{ route('delete.class', $class->id) }}"
+                                    class="fas fa-trash-alt btn btn-danger btn-sm py-2"></a>
                             </td>
                         </tr>
                     @endforeach
