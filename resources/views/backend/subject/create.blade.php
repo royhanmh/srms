@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Create Student Class</h4>
+                    <h4 class="mb-sm-0">Create Student Subject</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Create Class</a></li>
-                            <li class="breadcrumb-item active">Class</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Create </a></li>
+                            <li class="breadcrumb-item active">Subject</li>
                         </ol>
                     </div>
 
@@ -24,22 +24,22 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Student Class- Create</h4>
+                        <h4 class="card-title">Student Subject- Create</h4>
 
-                        <form action="{{ route('store.class') }}" method="POST">
+                        <form action="{{ route('store.subject') }}" method="POST">
                             @csrf
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Class Name</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Subject Name</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control " type="text" name="class_name" required>
+                                    <input class="form-control " type="text" name="name" required>
                                     <p style="font-style: italic">Eg - First, Second, Third etc</p>
                                 </div>
                             </div>
                             <!-- end row -->
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Section</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Class Code</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control " type="text" name="section" required>
+                                    <input class="form-control " type="text" name="code" required>
                                     <p style="font-style: italic">Eg - First, A, B, C etc</p>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
 
 
 
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Add Class</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Add Subject</button>
                         </form>
                     </div>
                 </div>
