@@ -35,6 +35,7 @@ Route::controller(ClassesController::class)->group(function () {
 Route::controller(SubjectController::class)->group(function () {
     Route::get('admin/subject/create', 'CreateSubject')->name('create.subject');
     Route::post('admin/subject/store', 'StoreSubject')->name('store.subject');
+    Route::get('admin/subject/manage', 'ManageSubject')->name('manage.subject');
 });
 
 Route::middleware('auth')->group(function () {

@@ -54,6 +54,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('create.subject') }}">Create Subject</a></li>
+                        <li><a href="{{ route('manage.subject') }}">Create Subject</a></li>
 
                     </ul>
                 </li>

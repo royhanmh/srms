@@ -25,4 +25,9 @@ class SubjectController extends Controller
         ];
         return redirect()->back()->with($notification);
     }
+    public function ManageSubject()
+    {
+        $subjects = Subject::all();
+        return view('backend.subject.manage', compact('subjects'));
+    }
 }
