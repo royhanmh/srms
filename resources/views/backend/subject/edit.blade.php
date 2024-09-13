@@ -26,26 +26,30 @@
 
                         <h4 class="card-title">Student Subject- Create</h4>
 
-                        <form action="{{ route('store.subject') }}" method="POST">
+                        <form action="{{ route('update.subject') }}" method="POST">
                             @csrf
+                            <input type="hidden" name="id" value="{{ $subject->id }}" required
+                                value="{{ $subject->name }}">
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Subject Name</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control " type="text" name="name" required>
+                                    <input class="form-control " type="text" name="name" required
+                                        value="{{ $subject->name }}">
                                 </div>
                             </div>
                             <!-- end row -->
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Class Code</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control " type="text" name="code" required>
+                                    <input class="form-control " type="text" name="code" required
+                                        value="{{ $subject->code }}">
                                 </div>
                             </div>
                             <!-- end row -->
 
 
 
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Add Subject</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Update Subject</button>
                         </form>
                     </div>
                 </div>

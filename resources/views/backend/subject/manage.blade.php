@@ -43,11 +43,10 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $subject->name }}</td>
                             <td>{{ $subject->code }}</td>
-                            <td subject="text-center"><a href="{{ route('edit.subject', $subject->id) }}"
-                                    subject="fas fa-edit btn btn-info btn-sm py-2"></a>
-
+                            <td class="text-center"><a href="{{ route('edit.subject', $subject->id) }}"
+                                    class="fas fa-edit btn btn-info btn-sm py-2"></a>
                                 <a href="{{ route('delete.subject', $subject->id) }}" id="delete"
-                                    subject="fas fa-trash-alt btn btn-danger btn-sm py-2"></a>
+                                    class="fas fa-trash-alt btn btn-danger btn-sm py-2"></a>
                             </td>
                         </tr>
                     @endforeach

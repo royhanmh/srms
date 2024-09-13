@@ -30,12 +30,15 @@ Route::controller(ClassesController::class)->group(function () {
     Route::get('admin/class/manage', 'ManageClass')->name('manage.class');
     Route::get('admin/class/edit/{id}', 'EditClass')->name('edit.class');
     Route::post('admin/class/update', 'UpdateClass')->name('update.class');
-    Route::get('admin/delete/{id}', 'DeleteClass')->name('delete.class');
+    Route::get('admin/class/delete/{id}', 'DeleteClass')->name('delete.class');
 });
 Route::controller(SubjectController::class)->group(function () {
     Route::get('admin/subject/create', 'CreateSubject')->name('create.subject');
     Route::post('admin/subject/store', 'StoreSubject')->name('store.subject');
     Route::get('admin/subject/manage', 'ManageSubject')->name('manage.subject');
+    Route::get('admin/subject/edit/{id}', 'EditSubject')->name('edit.subject');
+    Route::post('admin/subject/update', 'UpdateSubject')->name('update.subject');
+    Route::get('admin/subject/delete/{id}', 'DeleteSubject')->name('delete.subject');
 });
 
 Route::middleware('auth')->group(function () {
