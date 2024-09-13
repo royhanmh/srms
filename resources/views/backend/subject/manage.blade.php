@@ -30,6 +30,8 @@
                         <th>#</th>
                         <th>Subject Name</th>
                         <th>Code</th>
+                        <th>Creation Date</th>
+                        <th>Uodate Date</th>
                         <th>Action</th>
 
                     </tr>
@@ -43,6 +45,8 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $subject->name }}</td>
                             <td>{{ $subject->code }}</td>
+                            <td>{{ $subject->created_at }}</td>
+                            <td>{{ $subject->updated_at }}</td>
                             <td class="text-center"><a href="{{ route('edit.subject', $subject->id) }}"
                                     class="fas fa-edit btn btn-info btn-sm py-2"></a>
                                 <a href="{{ route('delete.subject', $subject->id) }}" id="delete"
