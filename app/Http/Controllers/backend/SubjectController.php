@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Subject;
 use App\Models\classes;
 class SubjectController extends Controller
@@ -78,5 +79,10 @@ class SubjectController extends Controller
             'alert-type' => 'success',
         ];
         return redirect()->back()->with($notification);
+    }
+    public function ManageSubjectCombination()
+    {
+        $results = DB::table('classes_subject')->join('classes', 'classes_subject.class_id', 'classes.id')->join('subjects', 'classes_subject.subject_id', 'subjects.id')->select('classes_subject.*', 'classes.class_name', 'classes.section', 'subjects.name as subject_name')->get();
+        return view('backend.subject.manage_subject_combination', compact('results'));
     }
 }

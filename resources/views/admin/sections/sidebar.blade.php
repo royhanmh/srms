@@ -56,6 +56,7 @@
                         <li><a href="{{ route('create.subject') }}">Create Subject</a></li>
                         <li><a href="{{ route('manage.subject') }}">Manage Subject</a></li>
                         <li><a href="{{ route('add.subject.combination') }}">Add Subject Combination</a></li>
+                        <li><a href="{{ route('manage.subject.combination') }}">Manage Combination</a></li>
 
                     </ul>
                 </li>
