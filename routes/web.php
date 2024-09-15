@@ -44,6 +44,7 @@ Route::controller(SubjectController::class)->group(function () {
     Route::get('admin/subject/combination/add', 'AddSubjectCombination')->name('add.subject.combination');
     Route::post('admin/subject/combination/store', 'StoreSubjectCombination')->name('store.subject.combination');
     Route::get('admin/subject/combination/manage', 'ManageSubjectCombination')->name('manage.subject.combination');
+    Route::get('admin/subject/combination/deactivate/{id}', 'DeactivateSubjectCombination')->name('deactivate.subject.combination');
 });
 
 Route::middleware('auth')->group(function () {

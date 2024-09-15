@@ -85,4 +85,27 @@ class SubjectController extends Controller
         $results = DB::table('classes_subject')->join('classes', 'classes_subject.class_id', 'classes.id')->join('subjects', 'classes_subject.subject_id', 'subjects.id')->select('classes_subject.*', 'classes.class_name', 'classes.section', 'subjects.name as subject_name')->get();
         return view('backend.subject.manage_subject_combination', compact('results'));
     }
+    public function DeactivateSubjectCombination($id)
+    {
+        $status = DB::table('classes_subject')->select('status')->where('id', $id)->first();
+        if ($status->status == 1) {
+            DB::table('classes_subject')
+                ->where('id', $id)
+                ->update(['status' => 0]);
+            $notification = [
+                'message' => 'Subject Combination Deactivated Successfully',
+                'alert-type' => 'success',
+            ];
+        } elseif ($status->status == 0) {
+            DB::table('classes_subject')
+                ->where('id', $id)
+                ->update(['status' => 1]);
+            $notification = [
+                'message' => 'Subject Combination Acivated Successfully',
+                'alert-type' => 'success',
+            ];
+        }
+
+        return redirect()->back()->with($notification);
+    }
 }

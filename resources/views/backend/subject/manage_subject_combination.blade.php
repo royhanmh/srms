@@ -51,8 +51,14 @@
                                     <span class="badge bg-danger">Inactive</span>
                                 @endif
                             </td>
-                            <td class="text-center"><a href="{{ route('edit.subject', $result->id) }}"
-                                    class="fas fa-check btn btn-info btn-sm py-2"></a>
+                            <td class="text-center">
+                                @if ($result->status == 1)
+                                    <a href="{{ route('deactivate.subject.combination', $result->id) }}"
+                                        class="fas fa-times btn btn-danger btn-lg py-2" title="Deactivate"></a>
+                                @elseif ($result->status == 0)
+                                    <a href="{{ route('deactivate.subject.combination', $result->id) }}"
+                                        class="fas fa-check btn btn-info btn-lg py-2" title="Activate"></a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
