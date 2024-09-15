@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Subject;
+use App\Models\classes;
 class SubjectController extends Controller
 {
     public function CreateSubject()
@@ -55,6 +56,25 @@ class SubjectController extends Controller
 
         $notification = [
             'message' => 'Subject Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+    }
+    // subject combination all method
+    public function AddSubjectCombination()
+    {
+        $classes = Classes::all();
+        $subjects = Subject::all();
+        return view('backend.subject.add_subject_combination', compact('subjects', 'classes'));
+    }
+    public function StoreSubjectCombination(Request $request)
+    {
+        $class = classes::findOrFail($request->class_id);
+        $subjects = $request->subject_ids;
+        $class->subjects()->attach($subjects);
+
+        $notification = [
+            'message' => 'Subject Combination Added Successfully',
             'alert-type' => 'success',
         ];
         return redirect()->back()->with($notification);

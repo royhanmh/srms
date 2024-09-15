@@ -39,6 +39,10 @@ Route::controller(SubjectController::class)->group(function () {
     Route::get('admin/subject/edit/{id}', 'EditSubject')->name('edit.subject');
     Route::post('admin/subject/update', 'UpdateSubject')->name('update.subject');
     Route::get('admin/subject/delete/{id}', 'DeleteSubject')->name('delete.subject');
+
+    // subject combination route
+    Route::get('admin/subject/combination/add', 'AddSubjectCombination')->name('add.subject.combination');
+    Route::post('admin/subject/combination/store', 'StoreSubjectCombination')->name('store.subject.combination');
 });
 
 Route::middleware('auth')->group(function () {
