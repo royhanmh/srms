@@ -51,7 +51,7 @@
                             </td>
                             <td>{{ $student->name }}</td>
                             <td>{{ $student->roll_id }}</td>
-                            <td>{{ $student->class_id }}</td>
+                            <td>{{ $student->class->class_name }}</td>
                             <td>{{ $student->created_at }}</td>
                             <td>
                                 @if ($student->status == 'active')
