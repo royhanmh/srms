@@ -68,7 +68,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('add.student') }}">Add Student</a></li>
-                        {{-- <li><a href="{{ route('manage.student') }}">Manage Students</a></li> --}}
+                        <li><a href="{{ route('manage.students') }}">Manage Students</a></li>
 
                     </ul>
                 </li>
