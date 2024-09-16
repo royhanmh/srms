@@ -53,6 +53,7 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('admin/student/create', 'AddStudent')->name('add.student');
     Route::post('admin/student/store', 'StoreStudent')->name('store.student');
     Route::get('admin/student/manage', 'ManageStudents')->name('manage.students');
+    Route::get('admin/student/delete/{id}', 'DeleteStudent')->name('delete.student');
 });
 
 Route::middleware('auth')->group(function () {

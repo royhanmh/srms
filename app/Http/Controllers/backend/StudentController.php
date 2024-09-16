@@ -47,4 +47,16 @@ class StudentController extends Controller
         $students = Student::all();
         return view('backend.student.manage', compact('students'));
     }
+
+    public function DeleteStudent($id)
+    {
+        $student = Student::findorFail($id);
+        $student->delete();
+        $notification = [
+            'message' => 'Student Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+
+        return redirect()->back()->with($notification);
+    }
 }

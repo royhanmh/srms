@@ -60,9 +60,10 @@
                                     <span class="badge bg-danger">Inactive</span>
                                 @endif
                             </td>
-                            <td class="text-center"><a href="{{ route('edit.subject', $student->id) }}"
-                                    class="fas fa-edit btn btn-info btn-sm py-2"></a>
-                                <a href="{{ route('delete.subject', $student->id) }}" id="delete"
+                            <td class="text-center">
+                                {{-- <a href="{{ route('edit.student', $student->id) }}"
+                                    class="fas fa-edit btn btn-info btn-sm py-2"></a> --}}
+                                <a href="{{ route('delete.student', $student->id) }}" id="delete"
                                     class="fas fa-trash-alt btn btn-danger btn-sm py-2"></a>
                             </td>
                         </tr>
