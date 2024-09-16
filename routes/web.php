@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ClassesController;
 use App\Http\Controllers\Backend\SubjectController;
+use App\Http\Controllers\Backend\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,6 +46,12 @@ Route::controller(SubjectController::class)->group(function () {
     Route::post('admin/subject/combination/store', 'StoreSubjectCombination')->name('store.subject.combination');
     Route::get('admin/subject/combination/manage', 'ManageSubjectCombination')->name('manage.subject.combination');
     Route::get('admin/subject/combination/deactivate/{id}', 'DeactivateSubjectCombination')->name('deactivate.subject.combination');
+});
+
+//Students All Routes
+Route::controller(StudentController::class)->group(function () {
+    Route::get('admin/student/create', 'AddStudent')->name('add.student');
+    Route::post('admin/student/store', 'StoreStudent')->name('store.student');
 });
 
 Route::middleware('auth')->group(function () {
