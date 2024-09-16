@@ -96,7 +96,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Add Subject</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Add Student</button>
                         </form>
                     </div>
                 </div>
